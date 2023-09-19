@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Botão "Aperte" com Corações</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 24px;
+      font-weight: bold;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .hearts {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff4081;
+      border-radius: 50%;
+      animation: heartAnimation 1s ease-out infinite;
+    }
+
+    @keyframes heartAnimation {
+      0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.1) translateY(-200px);
+        opacity: 0;
+      }
+    }
+
+    .message {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="button" onclick="showHearts()">Aperte</button>
+    <div class="hearts" id="hearts"></div>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function showHearts() {
+      const heartsContainer = document.getElementById('hearts');
+      heartsContainer.innerHTML = '';
+
+      for (let i = 0; i < 10; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.top = Math.random() * 100 + '%';
+        heart.style.left = Math.random() * 100 + '%';
+        heartsContainer.appendChild(heart);
+      }
+
+      const messageElement = document.getElementById('message');
+      messageElement.innerText = 'Eu te amo';
+    }
+  </script>
+</body>
+</html>
