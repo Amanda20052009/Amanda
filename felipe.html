@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Romântica</title>
+  <title>Página Romântica Interativa</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
       display: flex;
@@ -15,12 +14,13 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
+      background: url('amanda18.jpeg') repeat;
     }
 
     .container {
       text-align: center;
       padding: 20px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       max-width: 80%;
@@ -36,9 +36,19 @@
       line-height: 1.5;
     }
 
-    img {
-      max-width: 100%;
-      border-radius: 10px;
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff3366;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #ff1a4d;
     }
   </style>
 </head>
@@ -46,7 +56,25 @@
   <div class="container">
     <h1>Amor Eterno</h1>
     <p>Este é um momento especial que compartilhamos juntos, celebrando nosso amor.</p>
-    <img src="amanda18.jpeg" alt="Imagem Romântica">
+    <button onclick="mostrarMensagem()">Clique para ver a mensagem de amor</button>
+    <p id="mensagem" style="display: none; font-weight: bold; font-size: 24px; color: #ff3366;"></p>
   </div>
+
+  <script>
+    const mensagens = [
+      "Eu te amo!",
+      "Você é a razão do meu sorriso.",
+      "Você é o meu mundo.",
+      "Você é a pessoa mais especial da minha vida.",
+      "Amo cada momento ao seu lado."
+    ];
+
+    function mostrarMensagem() {
+      const mensagemElement = document.getElementById('mensagem');
+      const randomIndex = Math.floor(Math.random() * mensagens.length);
+      mensagemElement.innerText = mensagens[randomIndex];
+      mensagemElement.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
