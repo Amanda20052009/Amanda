@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Botão "Aperte" com Corações</title>
+  <title>Botão "Aperte" com Corações e Imagem</title>
   <style>
     body {
       display: flex;
@@ -67,6 +67,15 @@
       text-align: center;
       margin-top: 20px;
     }
+
+    .centerImage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px; /* Ajuste o tamanho da imagem conforme necessário */
+      height: 50px; /* Ajuste o tamanho da imagem conforme necessário */
+    }
   </style>
 </head>
 <body>
@@ -74,6 +83,7 @@
     <button class="button" onclick="showHearts()">Aperte</button>
     <div class="hearts" id="hearts"></div>
     <div class="message" id="message"></div>
+    <img src="amanda18.jpeg" alt="Coração" class="centerImage" id="centerImage">
   </div>
 
   <script>
