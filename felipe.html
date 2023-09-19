@@ -1,59 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <title>Botão "Aperte" no Canto Superior Esquerdo com Imagem de Fundo e Mensagem</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Romântica</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      margin: 0;
-      background: url('amanda18.jpeg/800x600') no-repeat center center fixed; 
-      background-size: cover;
-      overflow: hidden;
-      text-align: center;
-      position: relative;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.8);
+      text-align: center;
       padding: 20px;
+      background-color: #fff;
       border-radius: 10px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 80%;
     }
 
-    .button {
-      padding: 15px 30px;
-      font-size: 24px;
-      font-weight: bold;
-      background-color: #ff4081;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
+    h1 {
+      color: #ff3366;
     }
 
-    .message {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 20px;
+    p {
+      color: #555;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <button class="button" onclick="displayMessage()">Aperte</button>
-    <div class="message" id="message"></div>
+    <h1>Amor Eterno</h1>
+    <p>Este é um momento especial que compartilhamos juntos, celebrando nosso amor.</p>
+    <img src="amanda18.jpeg" alt="Imagem Romântica">
   </div>
-
-  <script>
-    function displayMessage() {
-      const messageElement = document.getElementById('message');
-      messageElement.innerText = 'Eu te amo';
-    }
-  </script>
 </body>
 </html>
