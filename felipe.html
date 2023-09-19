@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Botão "Aperte" com Corações e Imagem</title>
+  <title>Botão "Aperte" no Canto Superior Esquerdo com Imagem de Fundo e Mensagem</title>
   <style>
     body {
       display: flex;
@@ -9,17 +9,23 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
-      background-color: #f0f0f0;
+      background: url('https://via.placeholder.com/800x600') no-repeat center center fixed; 
+      background-size: cover;
       overflow: hidden;
+      text-align: center;
+      position: relative;
     }
 
     .container {
-      position: relative;
-      display: inline-block;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
     }
 
     .button {
-      display: inline-block;
       padding: 15px 30px;
       font-size: 24px;
       font-weight: bold;
@@ -30,75 +36,21 @@
       cursor: pointer;
     }
 
-    .hearts {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      pointer-events: none;
-      opacity: 0;
-    }
-
-    .heart {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: #ff4081;
-      border-radius: 50%;
-      animation: heartAnimation 1s ease-out infinite;
-    }
-
-    @keyframes heartAnimation {
-      0% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0.1) translateY(-200px);
-        opacity: 0;
-      }
-    }
-
     .message {
       font-size: 20px;
       font-weight: bold;
-      text-align: center;
       margin-top: 20px;
-    }
-
-    .centerImage {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50px; /* Ajuste o tamanho da imagem conforme necessário */
-      height: 50px; /* Ajuste o tamanho da imagem conforme necessário */
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <button class="button" onclick="showHearts()">Aperte</button>
-    <div class="hearts" id="hearts"></div>
+    <button class="button" onclick="displayMessage()">Aperte</button>
     <div class="message" id="message"></div>
-    <img src="amanda18.jpeg" alt="Coração" class="centerImage" id="centerImage"> 
   </div>
 
   <script>
-    function showHearts() {
-      const heartsContainer = document.getElementById('hearts');
-      heartsContainer.innerHTML = '';
-
-      for (let i = 0; i < 10; i++) {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.style.top = Math.random() * 100 + '%';
-        heart.style.left = Math.random() * 100 + '%';
-        heartsContainer.appendChild(heart);
-      }
-
+    function displayMessage() {
       const messageElement = document.getElementById('message');
       messageElement.innerText = 'Eu te amo';
     }
